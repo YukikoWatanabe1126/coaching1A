@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>フォーム</title>
+</head>
+<body>
+	<form th:action="@{/form}" th:object="${coachingForm}" th:method="post">
+		<label for="routeParam">Route Parameter:</label>
+        <input type="text" id="routeParam" name="routeParam" th:field="*{routeParam}" />
+        <button type="submit">Submit</button>
+	</form>
+</body>
+</html>
