@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>登録データ</title>
+</head>
+<body>
+	<form th:action="@{/create}" th:object="${coachingForm}" th:method="post">
+		<label for="create">登録:</label>
+        <input type="text" id="create" name="create" th:field="*{data}" />
+        <button type="submit">Submit</button>
+	</form>
+</body>
+</html>

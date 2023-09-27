@@ -3,9 +3,12 @@ package com.example.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.form.CoachingForm;
 
@@ -26,5 +29,16 @@ public class CoachingController {
 		coachingForm.setRouteParam(routeParam);
 		model.addAttribute("coachingForm", coachingForm);
 		return "form";
+	}
+	
+	@PostMapping("/create")
+	@ResponseBody
+	public String create(CoachingForm coachingForm) {
+		return "登録データ" + coachingForm.getData();
+	}
+	
+	@GetMapping("/create")
+	public String ceate(@ModelAttribute CoachingForm coachingForm) {
+		return "complete";
 	}
 }
