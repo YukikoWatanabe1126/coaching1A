@@ -24,10 +24,8 @@ public class CoachingController {
 	}
 	
 	@GetMapping("/form/{routeParam}")
-	public String form(@PathVariable("routeParam") String routeParam,  Model model) {
-		CoachingForm coachingForm = new CoachingForm();
-		coachingForm.setRouteParam(routeParam);
-		model.addAttribute("coachingForm", coachingForm);
+	public String form(@PathVariable("routeParam") String routeParam,  Model model, CoachingForm CoachingForm) {
+		model.addAttribute("coachingForm", CoachingForm);
 		return "form";
 	}
 	
